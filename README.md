@@ -17,23 +17,13 @@ Our research question is:
 Using this investigation, we aim to build a predictive model that helps streamline recipe planning for users by providing accurate cooking time estimates. This insight could enhance recipe recommendation systems, improving user experience by tailoring recommendations to their time constraints and preferences.
 
 ### Description of Columns
-| Column | Description |
-| --- | --- |
-| name | Recipe name |
-| minutes | minutes to prepare recipe |
-| tags | Food.com tags for recipe |
-| n_steps | Number of steps in recipe |
-| steps | 	Text for recipe steps, in order |
-| rating | 	Rating given |
-| review | 	Review text |
 
-| Component                                                      | Weight         |
-| -------------------------------------------------------------- | -------------- |
-| **Checkpoint** | 15 points |
-| **Step 1: Introduction**  | 5 points  |
-| **Step 2: Data Cleaning and Exploratory Data Analysis** <br>• Cleaned data (5 points)<br>• Performed univariate analyses (5 points)<br>• Performed bivariate analyses and aggregations (5 points)<br>• Commented on imputation strategies (5 points) | 20 points       |
-| **Step 3: Framing a Prediction Problem** | 5 points |
-| **Step 4: Baseline Model** | 20 points |
-| **Step 5: Final Model** | 25 points |
-| **Overall: Included all necessary components on the website** | 10 points      |
-| **Total**  | **100 points** |
+| Column                                                      | Description         |
+| ----------------------------------------------------------- | ------------------- |
+| **name** | Recipe name |
+| **minutes**  | minutes to prepare recipe |
+| **tags**  | Food.com tags for recipe |
+| **n_steps** | Number of steps in recipe |
+| **steps** | Text for recipe steps, in order |
+| **rating** | Rating given |
+| **review** | Review text |
