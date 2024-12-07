@@ -18,12 +18,28 @@ Using this investigation, we aim to build a predictive model that helps streamli
 
 ### Description of Columns
 
+The dataset provides a comprehensive collection of columns that capture key details about recipes and user interactions on Food.com. With 4,051,980 rows, this dataset offers insights into cooking times, recipe steps, user reviews, and ratings. Below is an introduction to some of the essential columns:
+
+
 | Column                                                      | Description         |
 | ----------------------------------------------------------- | ------------------- |
 | **name** | Recipe name |
 | **minutes**  | minutes to prepare recipe |
 | **tags**  | Food.com tags for recipe |
 | **n_steps** | Number of steps in recipe |
+| **n_ingredients** | Number of ingredients in recipe |
 | **steps** | Text for recipe steps, in order |
 | **rating** | Rating given |
 | **review** | Review text |
+
+## Data Cleaning and Exploratory Data Analysis
+
+### Data Cleaning 
+We were provided with two raw CSV files, one that contained recipes, and one that contained reviews and ratings. We started data cleaning by merging the datasets together. They were merged so that all recipes that appeared in the first CSV file also appeared in the DataFrame, regardless of whether they had a rating or not. Then, in the new DataFrame, we filled all ratings of 0 with np.nan. This is because when someone was inputting a recipe,
+
+In the merged dataset, fill all ratings of 0 with np.nan. (Think about why this is a reasonable step, and include your justification in your website.)
+Find the average rating per recipe, as a Series.
+Add this Series containing the average rating per recipe back to the recipes dataset however you’d like (e.g., by merging). Use the resulting dataset for all of your analysis.
+
+
+
