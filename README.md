@@ -35,7 +35,7 @@ The dataset provides a comprehensive collection of columns that capture key deta
 ## Data Cleaning and Exploratory Data Analysis
 
 ### Data Cleaning 
-We were provided with two raw CSV files, one that contained recipes, and one that contained reviews and ratings. We started data cleaning by merging the datasets together. They were merged so that all recipes that appeared in the first CSV file also appeared in the DataFrame, regardless of whether they had a rating or not. Then, in the new DataFrame, we filled all ratings of 0 with np.nan. This is because when someone was inputting a recipe, the lowest rating that they could have given is 1 star, so a rating of 0 stars really means that they didn't rate it. After that, we found the average rating per recipe, and added this as a column back to the recipes dataframe. 
+We were provided with two raw CSV files, one that contained recipes, and one that contained reviews and ratings. We started data cleaning by merging the datasets together. They were merged so that all recipes that appeared in the first CSV file also appeared in the DataFrame, regardless of whether they had a rating or not. Then, in the new DataFrame, we filled all ratings of 0 with np.nan. We were able to do this because when someone was inputting a recipe, the lowest rating that they could have given is 1 star, so a rating of 0 stars really means that they didn't rate it. After that, we found the average rating per recipe, and added this as a column back to the recipes dataframe. 
 
 Then, we looked at the columns we were using and noticed that there were some really large outliers (specifically in the 'minutes' column, but also smaller outliers in the 'n_ingredients' and 'n_steps' columns). To combat this, we chose to only consider the data that is within 2 standard deviations of the mean for these three columns. 
 
@@ -60,15 +60,28 @@ We performed univariate analysis on the "minutes" column in the dataset.
   frameborder="0"
 ></iframe>
 
-From this graph, we can see that most of the data is centered between 20 minutes and 50 minutes, and it is heavily right-skewed. The data towards the top of the graph is more spread out than the data towards the bottom of the graph. 
+From this graph, we can see that most of the data is centered between 20 minutes and 50 minutes, and it is heavily right-skewed. The data towards the top of the graph is more spread out than the data towards the bottom of the graph. From the graph, we can tell that "minutes" is most likely to be between 20 and 50, and this could be helpful when considering our initial question. 
 
 ### Bivariate Analysis
+First, we added a column in the DataFrame that was a ratio of ingredients to steps (n_ingredients / n_steps). Then, we performed a bivariate analysis by graphing this column against the "minutes" column. 
+
+<iframe
+  src="assets/minutes-box.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+From this graph, we can see that there is a roughly negative relationship between the step-ingredient ratio and time it takes to prepare a recipe. We ccan also see that some of the recipes that take the longest to prepare have a lower step-ingredient ratio. 
 
 ### Interesting Aggregates
 
 ### Imputation 
+The only imputation we performed was previously mentioned in the Data Cleaning section. For completeness, it is restated below: 
 
-### Baseline Model
+In the new DataFrame, we filled all ratings of 0 with np.nan. We were able to do this because when someone was inputting a recipe, the lowest rating that they could have given is 1 star, so a rating of 0 stars really means that they didn't rate it.
+
+## Baseline Model
 Our baseline model utilizes a Random Forest Regressor in order to model the data. Our features - 'steps' and 'ingredients' - are both quantitative variables that we will use in order to predict average recipe preparation time across our dataset. This model performed with an r-squared value of 0.25 and a mean-squared-error (MSE) of 441.26. Thus, we can conclude that our current model does not fit the trends in our data very well - the r-squared value is relatively small and the MSE is high. We will need to better train the model in order to recieve better results.
 
 ### Final Model
