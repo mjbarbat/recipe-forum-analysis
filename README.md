@@ -56,7 +56,7 @@ We performed univariate analysis on the "minutes" column in the dataset.
 <iframe
   src="assets/minutes-box.html"
   width="800"
-  height="600"
+  height="400"
   frameborder="0"
 ></iframe>
 
