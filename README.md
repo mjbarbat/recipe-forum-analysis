@@ -35,11 +35,16 @@ The dataset provides a comprehensive collection of columns that capture key deta
 ## Data Cleaning and Exploratory Data Analysis
 
 ### Data Cleaning 
-We were provided with two raw CSV files, one that contained recipes, and one that contained reviews and ratings. We started data cleaning by merging the datasets together. They were merged so that all recipes that appeared in the first CSV file also appeared in the DataFrame, regardless of whether they had a rating or not. Then, in the new DataFrame, we filled all ratings of 0 with np.nan. This is because when someone was inputting a recipe,
+We were provided with two raw CSV files, one that contained recipes, and one that contained reviews and ratings. We started data cleaning by merging the datasets together. They were merged so that all recipes that appeared in the first CSV file also appeared in the DataFrame, regardless of whether they had a rating or not. Then, in the new DataFrame, we filled all ratings of 0 with np.nan. This is because when someone was inputting a recipe, the lowest rating that they could have given is 1 star, so a rating of 0 stars really means that they didn't rate it. After that, we found the average rating per recipe, and added this as a column back to the recipes dataframe. 
 
-In the merged dataset, fill all ratings of 0 with np.nan. (Think about why this is a reasonable step, and include your justification in your website.)
-Find the average rating per recipe, as a Series.
-Add this Series containing the average rating per recipe back to the recipes dataset however you’d like (e.g., by merging). Use the resulting dataset for all of your analysis.
+Then, we looked at the columns we were using and noticed that there were some really large outliers (specifically in the 'minutes' column, but also smaller outliers in the 'n_ingredients' and 'n_steps' columns). To combat this, we chose to only consider the data that is within 2 standard deviations of the mean for these three columns. 
 
+Below is the first couple of rows of the data cleaned DataFrame. This preview only includes the relevant columns. 
 
-
+|    | name                                 |   minutes |   n_steps |   average rating |   n_ingredients |
+|---:|:-------------------------------------|----------:|----------:|-----------------:|----------------:|
+|  0 | 1 brownies in the world    best ever |        40 |        10 |                4 |               9 |
+|  1 | 1 in canada chocolate chip cookies   |        45 |        12 |                5 |              11 |
+|  2 | 412 broccoli casserole               |        40 |         6 |                5 |               9 |
+|  3 | 412 broccoli casserole               |        40 |         6 |                5 |               9 |
+|  4 | 412 broccoli casserole               |        40 |         6 |                5 |               9 |
