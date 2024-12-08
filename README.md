@@ -41,10 +41,29 @@ Then, we looked at the columns we were using and noticed that there were some re
 
 Below is the first couple of rows of the data cleaned DataFrame. This preview only includes the relevant columns. 
 
-|    | name                                 |   minutes |   n_steps |   average rating |   n_ingredients |
-|---:|:-------------------------------------|----------:|----------:|-----------------:|----------------:|
-|  0 | 1 brownies in the world    best ever |        40 |        10 |                4 |               9 |
-|  1 | 1 in canada chocolate chip cookies   |        45 |        12 |                5 |              11 |
-|  2 | 412 broccoli casserole               |        40 |         6 |                5 |               9 |
-|  3 | 412 broccoli casserole               |        40 |         6 |                5 |               9 |
-|  4 | 412 broccoli casserole               |        40 |         6 |                5 |               9 |
+| name                                 |   minutes |   n_steps |   average rating |   n_ingredients |
+|:-------------------------------------|----------:|----------:|-----------------:|----------------:|
+| 1 brownies in the world    best ever |        40 |        10 |                4 |               9 |
+| 1 in canada chocolate chip cookies   |        45 |        12 |                5 |              11 |
+| 412 broccoli casserole               |        40 |         6 |                5 |               9 |
+| millionaire pound cake               |       120 |         7 |                5 |               7 |
+| 2000 meatloaf                        |        90 |        17 |                5 |              13 |
+
+### Univariate Analysis
+
+We performed univariate analysis on the "minutes" column in the dataset. 
+
+<iframe
+  src="assets/minutes-box.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+From this graph, we can see that most of the data is centered between 20 minutes and 50 minutes, and it is heavily right-skewed. The data towards the top of the graph is more spread out than the data towards the bottom of the graph. 
+
+### Bivariate Analysis
+
+### Interesting Aggregates
+
+### Imputation 
