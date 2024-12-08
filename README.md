@@ -67,3 +67,9 @@ From this graph, we can see that most of the data is centered between 20 minutes
 ### Interesting Aggregates
 
 ### Imputation 
+
+### Baseline Model
+Our baseline model utilizes a Random Forest Regressor in order to model the data. Our features - 'steps' and 'ingredients' - are both quantitative variables that we will use in order to predict average recipe preparation time across our dataset. This model performed with an r-squared value of 0.25 and a mean-squared-error (MSE) of 441.26. Thus, we can conclude that our current model does not fit the trends in our data very well - the r-squared value is relatively small and the MSE is high. We will need to better train the model in order to recieve better results.
+
+### Final Model
+
