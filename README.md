@@ -66,7 +66,7 @@ From this graph, we can see that most of the data is centered between 20 minutes
 First, we added a column in the DataFrame that was a ratio of ingredients to steps (n_ingredients / n_steps). Then, we performed a bivariate analysis by graphing this column against the "minutes" column. 
 
 <iframe
-  src="assets/minutes-box.html"
+  src="assets/step-ing-ratio-minutes.html"
   width="800"
   height="600"
   frameborder="0"
@@ -75,6 +75,48 @@ First, we added a column in the DataFrame that was a ratio of ingredients to ste
 From this graph, we can see that there is a roughly negative relationship between the step-ingredient ratio and time it takes to prepare a recipe. We ccan also see that some of the recipes that take the longest to prepare have a lower step-ingredient ratio. 
 
 ### Interesting Aggregates
+
+Below is an interesting aggregate to note in the data set. 
+
+|   Number of Steps |   Average Cooking Time (Minutes) |
+|------------------:|---------------------------------:|
+|                 1 |                          9.42455 |
+|                 2 |                         11.8178  |
+|                 3 |                         17.5343  |
+|                 4 |                         22.7988  |
+|                 5 |                         28.0374  |
+|                 6 |                         32.08    |
+|                 7 |                         34.7543  |
+|                 8 |                         37.1898  |
+|                 9 |                         39.558   |
+|                10 |                         41.2045  |
+|                11 |                         42.558   |
+|                12 |                         44.9707  |
+|                13 |                         45.5209  |
+|                14 |                         47.1639  |
+|                15 |                         49.0698  |
+|                16 |                         49.6452  |
+|                17 |                         51.7282  |
+|                18 |                         51.4198  |
+|                19 |                         52.8817  |
+|                20 |                         53.129   |
+|                21 |                         54.423   |
+|                22 |                         59.5752  |
+|                23 |                         58.4765  |
+|                24 |                         57.567   |
+
+We first grouped by the number of steps, then used the aggregate function mean() on the "minutes" column to find the mean cooking time. This table showed us that there is a positive correlation between these two variables. 
+
+To visualize this relationship more, we also created a bar chart: 
+
+<iframe
+  src="assets/agg-box.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+As predicted, the graph shows that there is a positive correlation between number of steps and the average cooking time (when grouped by the number of steps in a recipe). 
 
 ### Imputation 
 The only imputation we performed was previously mentioned in the Data Cleaning section. For completeness, it is restated below: 
