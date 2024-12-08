@@ -25,12 +25,9 @@ The dataset provides a comprehensive collection of columns that capture key deta
 | ----------------------------------------------------------- | ------------------- |
 | **name** | Recipe name |
 | **minutes**  | minutes to prepare recipe |
-| **tags**  | Food.com tags for recipe |
 | **n_steps** | Number of steps in recipe |
 | **n_ingredients** | Number of ingredients in recipe |
-| **steps** | Text for recipe steps, in order |
 | **rating** | Rating given |
-| **review** | Review text |
 
 ## Data Cleaning and Exploratory Data Analysis
 
@@ -56,7 +53,7 @@ We performed univariate analysis on the "minutes" column in the dataset.
 <iframe
   src="assets/minutes-box.html"
   width="800"
-  height="400"
+  height="800"
   frameborder="0"
 ></iframe>
 
