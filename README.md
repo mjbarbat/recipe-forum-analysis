@@ -18,7 +18,7 @@ Using this investigation, we aim to build a predictive model that helps streamli
 
 ### Description of Columns
 
-The dataset provides a comprehensive collection of columns that capture key details about recipes and user interactions on Food.com. With 4,051,980 rows, this dataset offers insights into cooking times, recipe steps, user reviews, and ratings. Below is an introduction to some of the essential columns:
+The dataset provides a comprehensive collection of columns that capture key details about recipes and user interactions on Food.com. With 4,051,980 rows, this dataset offers insights into preparation times, recipe steps, user reviews, and ratings. Below is an introduction to some of the essential columns:
 
 
 | Column                                                      | Description         |
@@ -119,6 +119,14 @@ As predicted, the graph shows that there is a positive correlation between numbe
 The only imputation we performed was previously mentioned in the Data Cleaning section. For completeness, it is restated below: 
 
 In the new DataFrame, we filled all ratings of 0 with np.nan. We were able to do this because when someone was inputting a recipe, the lowest rating that they could have given is 1 star, so a rating of 0 stars really means that they didn't rate it.
+
+## Framing a Prediction Problem
+The prediction problem we chose to answer is 
+>**What features influence a recipe's preparation time?**
+
+This is a regression problem, since preparation time is a quantatative variable. Our response variable is preparation time (which can be found in the 'minutes' column of the DataFrame). We chose it because we thought it would be the most meaningful variable to predict (and that the most features would influence it). We are using MSE to evaluate our model because we weren't sure if there would be a linear relationship, so we couldn't use R^2. 
+
+We are using only using (and modifying) other columns in the dataset, so all of the information we're using to create the model will be known at the time of prediction.  
 
 ## Baseline Model
 Our baseline model utilizes a Random Forest Regressor in order to model the data. Our features - 'steps' and 'ingredients' - are both quantitative variables that we will use in order to predict average recipe preparation time across our dataset. This model performed with an r-squared value of 0.25 and a mean-squared-error (MSE) of 441.26. Thus, we can conclude that our current model does not fit the trends in our data very well - the r-squared value is relatively small and the MSE is high. We will need to better train the model in order to recieve better results.
