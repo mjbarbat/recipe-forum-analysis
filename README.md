@@ -2,7 +2,7 @@
 
 Food.com Recipe and Rating Analysis is a comprehensive data science project designed to explore culinary trends from recipes and user reviews. The project involves multiple stages of analysis, including data preprocessing, exploratory data analysis, and modeling.
 
-Authors: Manu Anand & Melissa Barbat
+Authors: Manu Anand (manushri@umich.edu) & Melissa Barbat (mjbarbat@umich.edu)
 
 ## Introduction
 
